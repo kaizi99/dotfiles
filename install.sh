@@ -15,7 +15,7 @@ rm -R temp
 
 # Install required programs
 
-sudo pacman -S ttf-inconsolata compton
+sudo pacman -S ttf-inconsolata compton wicd wicd-gtk
 yaourt -S i3-gaps
 yaourt -S ttf-font-awesome
 yaourt -S polybar-git
