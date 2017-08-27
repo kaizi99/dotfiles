@@ -1,0 +1,126 @@
+[settings]
+throttle-ms = 50
+throttle-limit = 5
+
+[bar/top]
+monitor = LVDS
+width = 100%
+height = 27
+offset-y = 5
+
+background = #222222
+foreground = #eefafafa
+linecolor = #fba922
+
+overline-size = 2
+overline-color = #bc92f8
+underline-size = 2
+underline-color = #bc92f8
+
+padding-right = 1
+module-margin = 1
+
+font-0 = Inconsolata:size=12;3
+font-1 = FontAwesome:size=12;3
+font-2 = Unifont:size=12;3
+font-3 = Termsynu:size=8;-1
+
+modules-left = i3
+modules-center = date
+modules-right = fs-root cpu memory wifi lan
+
+[module/i3]
+type = internal/i3
+enable-scroll = false
+format = <label-state> <label-mode>
+
+label-focused = %icon%
+label-focused-padding = 2
+label-focused-foreground = #ffffff
+label-focused-background = #3f3f3f
+label-focused-underline = #fba922
+
+label-unfocused = %icon%
+label-unfocused-padding = 2
+
+label-urgent = %icon%
+label-urgent-foreground = #000000
+label-urgent-background = #bd2c40
+label-urgent-padding = 2
+
+label-visible = %icon%
+label-visible-underline = #FFFFFF
+label-visible-padding = 2
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
+
+strip-wsnumbers = true
+index-sort = true
+
+; vim:ft=dosini
+
+[module/cpu]
+type = internal/cpu
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 0.5
+
+format = <label>
+label = CPU %percentage%%
+label-underline = FFFFFF
+
+[module/memory]
+type = internal/memory
+label = RAM %gb_used%
+format = <label>
+label-underline = FFFFFF
+
+[module/fs-root]
+type = internal/fs
+mount-0 = /
+format-mounted = <label-mounted>
+label-mounted =  %free%
+label-mounted-underline = FFFFFF
+
+[module/fs-home]
+type = internal/fs
+mount-0 = /home
+format-mounted = <label-mounted>
+label-mounted =  %free%
+label-mounted-underline = FFFFFF
+
+[module/lan]
+type = internal/network
+interface = enp3s0
+label-connected =  %local_ip%
+label-connected-underline = FFFFFF
+
+[module/wifi]
+type = internal/network
+interface = wlp4s0
+label-connected =  %local_ip%
+label-connected-underline = FFFFFF
+
+[module/title]
+type = internal/xwindow
+label-underline = #fba922
+
+[module/date]
+type = internal/date
+
+interval = 1.0
+date = %Y-%m-%d
+time = %H:%M
+
+label = %date% %time%
+label-underline = #fba922
