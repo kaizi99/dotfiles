@@ -147,11 +147,6 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-# show tray icons on the primary monitor
-bar {
-    tray_output primary
-}
-
 bindsym $mod+r mode "resize"
 
 gaps inner 7
