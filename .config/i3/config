@@ -157,4 +157,4 @@ for_window [class="^.*"] border pixel 1
 exec compton &
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always feh --bg-scale $HOME/Wallpapers/Space.jpg
-
+exec --no-startup-id i3-msg 'workspace 10; exec /usr/bin/pavucontrol'
