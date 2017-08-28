@@ -156,7 +156,7 @@ gaps outer 10
 
 for_window [class="^.*"] border pixel 1
 
-exec compton &
+exec compton --config $HOME/.config/compton/config &
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always feh --bg-scale $HOME/Wallpapers/Space.jpg
 exec --no-startup-id i3-msg 'workspace 10; exec /usr/bin/pavucontrol;exec /usr/bin/wicd-gtk;move workspace to output left;workspace 1'
