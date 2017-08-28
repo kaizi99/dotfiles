@@ -28,7 +28,7 @@ font-3 = Termsynu:size=8;-1
 
 modules-left = i3
 modules-center = date
-modules-right = fs-root cpu memory wifi lan
+modules-right = fs-root cpu memory wifi lan battery
 
 [module/i3]
 type = internal/i3
@@ -109,7 +109,7 @@ label-connected-underline = FFFFFF
 [module/wifi]
 type = internal/network
 interface = wlp4s0
-label-connected =  %local_ip%
+label-connected =  %essid%
 label-connected-underline = FFFFFF
 
 [module/title]
@@ -125,3 +125,35 @@ time = %H:%M
 
 label = %date% %time%
 label-underline = #fba922
+
+[module/battery]
+type = internal/battery
+
+battery = BAT1
+adapter = ACAD
+poll-interval = 5
+
+format-charging = <animation-charging> <label-charging>
+format-charging-underline = FFFFFF
+label-charging = Charging %percentage%%
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-underline = FFFFFF
+label-discharging = Discharging %percentage%%
+
+label-full =  Fully charged
+format-full-underline = FFFFFF
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+; Framerate in milliseconds
+animation-charging-framerate = 750
